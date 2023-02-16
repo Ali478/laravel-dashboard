@@ -45,7 +45,13 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Product Category</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="Product Category" name="category">
+                                    <!-- <input type="text"  > -->
+                                    <select class="form-control" name="category">
+                                    <option>choose category</option>
+                                        @foreach($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -58,6 +64,12 @@
                                 <label class="col-sm-3 col-form-label">Product Quantity</label>
                                 <div class="col-sm-5">
                                     <input type="number" class="form-control" placeholder="Product Quantity" name="quantity">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Product Code</label>
+                                <div class="col-sm-5">
+                                    <input type="number" class="form-control" placeholder="Product Code" name="code">
                                 </div>
                             </div>
                             <div class="form-group row">

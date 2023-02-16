@@ -87,7 +87,7 @@ class AuthController extends Controller
                 return redirect()->back()->withErrors(['error' => $error])->withInput();
             }
             $result = $this->user->login($request->email_id, $request->password, $request->ip());
-
+// auth attempt
             if ($result) {
                 
                 $credentials = array();
@@ -150,9 +150,9 @@ class AuthController extends Controller
                 if ($is_status) {
                     return view('auth.verify_email')->with(['status' => true, 'message' => 'Email Verification Success']);
                 }
-                return view('auth.verify_email')->with(['status' => false, 'message' => 'Error While Activating Emails']);
+                return view('auth.verify_email')->with(['status' => null, 'message' => 'Error While Activating Emails']);
             }
-            return view('auth.verify_email')->with(['status' => false, 'message' => 'Provided Activation Key is not valid or has been expired, Please resend verification mail and try again']);
+            return view('auth.verify_email')->with(['status' => null, 'message' => 'Provided Activation Key is not valid or has been expired, Please resend verification mail and try again']);
         } catch (\Exception $ex) {
             Log::info('AuthenticationController Error', ['getverifyKey' => $ex->getMessage(), 'line' => $ex->getLine()]);
             return view('error.500');

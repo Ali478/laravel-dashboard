@@ -28,8 +28,8 @@
                                         <tr>
                                             <td><b>{{ $item->id }}</b></td>
                                             <td><b>{{ $item->name }}</b></td>
-                                            <td>{{ $item->category }}</td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>{{ $item->category_name }}</td>
+                                            <td> Rs: {{ $item->price }}</td>
                                             <td>{{ $item->qnt }}</td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>

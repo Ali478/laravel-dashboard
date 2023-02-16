@@ -195,7 +195,7 @@ class User extends Authenticatable
     }
     public function updateVerifyStatus($email_id,$key){
     try {
-        $result = $this->where('email',$email_id)->where('confirmation_code',$key)->update(['confirmed'=>1]);
+        $result = $this->where('email',$email_id)->where('confirmation_code',$key)->update(['confirmed'=>1, 'status'=>1, 'active'=>1]);
         if ($result){
             return true;
         }

@@ -44,8 +44,20 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Product Category</label>
+                                
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="Product Category" value="{{$product->category}}" name="category">
+                                    <select class="form-control" name="category">
+                                        @foreach($categories as $category)
+
+                                        @if($category->id == $product->category){
+                                            <option value="{{$category->id}}" selected>{{$category->category_name}}</option>
+                                        }
+                                        @else{
+                                            <option value="{{$category->id}}" >{{$category->category_name}}</option>
+                                        }
+                                        @endif
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">

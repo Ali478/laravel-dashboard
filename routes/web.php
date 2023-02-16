@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +53,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/add/product',[ProductController::class, 'addNewProduct']);
     Route::get('/edit/product/{id}',[ProductController::class, 'editProduct']);
     Route::post('/update/product/{id}',[ProductController::class, 'updateProduct']);
+    Route::post('/products/search',[ProductController::class, 'search']);
+    
 
     Route::get('/category',[CategoryController::class, 'getCategory']);
     Route::get('/add/category',[CategoryController::class, 'addCategory']);
@@ -60,6 +64,16 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('/update/category/{id}',[CategoryController::class, 'updateCategory']);
     
 
+    Route::resource('carts', CartController::class );
+    Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+
+
+    // Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+    // Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
+    // Route::delete('/cart/delete', [CartController::class, 'delete']);
+    // Route::delete('/cart/empty', [CartController::class, 'empty']);
+
+    
 });
 
 

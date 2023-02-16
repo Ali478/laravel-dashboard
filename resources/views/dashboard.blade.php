@@ -68,7 +68,23 @@
                     </div>
                 </div>
 
-
+                <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
+                    <div class="card overflow-hidden">
+                        <div class="card-body px-4 py-4">
+                            <h5 class="mb-3">1700 / <small class="text-primary">Sales Status</small></h5>
+                            <div class="chart-point">
+                                <div class="check-point-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="ShareProfit2" width="100" height="100" style="display: block; width: 100px; height: 100px;" class="chartjs-render-monitor"></canvas>
+                                </div>
+                                <ul class="chart-point-list">
+                                    <li><i class="fa fa-circle text-primary mr-1"></i> 40% Tickets</li>
+                                    <li><i class="fa fa-circle text-success mr-1"></i> 35% Events</li>
+                                    <li><i class="fa fa-circle text-warning mr-1"></i> 25% Other</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

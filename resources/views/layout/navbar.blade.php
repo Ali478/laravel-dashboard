@@ -13,7 +13,7 @@
 ********************-->
     <div class="nav-header">
         <a href="/dashboard" class="brand-logo">
-            User Dashboard
+            <img src="{{ asset('/images/logo-white.png') }}" >
         </a>
         <div class="nav-control">
             <div class="hamburger">
@@ -50,7 +50,7 @@ Header start
                     <ul class="navbar-nav header-right">
                         <li class="nav-item dropdown header-profile">
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                {!! Avatar::create($avatar ?? '')->setFontSize(12)->setDimension(35,45)->toSvg() !!}
+                                {!! Avatar::create($avatar ?? '')->setFontSize(22)->setDimension(45,45)->toSvg() !!}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <p href="/profile" class="dropdown-item">

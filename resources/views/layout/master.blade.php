@@ -113,5 +113,9 @@ End Scripts
     };
 
 </script>
+<script src="{{ asset('js/app.js') }}"></script>
+  @yield('js')
+  @stack('script-alt')
+
 	</body>
 </html>

@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PosController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,10 +69,12 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
 
 
-    // Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
-    // Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
-    // Route::delete('/cart/delete', [CartController::class, 'delete']);
-    // Route::delete('/cart/empty', [CartController::class, 'empty']);
+    Route::get('transactionspage', [TransactionController::class, 'index'])->name('transactions.index');
+    Route::get('transactions/{transaction}/print', [TransactionController::class, 'printpage'])->name('transactions.printpage');
+    Route::post('transactions', [TransactionController::class, 'store'])->name('transactions.store');
+    Route::get('transactions/{transaction}', [TransactionController::class, 'show'])->name('transactions.show');
+    Route::delete('transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+
 
     
 });

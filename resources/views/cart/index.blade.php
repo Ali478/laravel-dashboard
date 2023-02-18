@@ -33,7 +33,7 @@
                     </table>
                 </div>
             </div>
-            <form action="" method="post">
+            <form action="{{ route('transactions.store') }}" method="post">
                 @csrf 
                 <div class="row mt-2">
                     <div class="col">Total:</div>
@@ -81,7 +81,8 @@
                     placeholder="Search Product..."
                 />
             </div>
-            <div class="order-product product-search">
+
+            <div class="order-product product-search" style="height:600px; overflow-y:scroll;">
                 @foreach($products as $product)
                     <button type="button"
                         class="item"
@@ -113,6 +114,15 @@
 @push('script-alt')
     <script>
          $(document).ready(function() {
+            
+            $(document).on('click', '.testpay', function() {
+                alert('hhe')
+                
+            
+            })
+
+
+
 
                 function getCarts(){
                 $.ajax({

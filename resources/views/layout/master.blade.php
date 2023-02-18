@@ -30,7 +30,7 @@
 <!--**********************************
   Content body start
 ***********************************-->
-    <div class="content-body" style="min-height: 788px;">
+    <div class="content-body" style="min-height: 788px ">
         @include('layout.alert')
         <div class="container-fluid">
             @yield('contain')

@@ -15,16 +15,16 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->string('name');
-            $table->integer('stock');
-            $table->integer('quantity');
-            $table->decimal('price',15, 2);;
-            $table->timestamps();
-        });
+        // Schema::create('carts', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
+        //     $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+        //     $table->string('name');
+        //     $table->integer('stock');
+        //     $table->integer('quantity');
+        //     $table->decimal('price',15, 2);;
+        //     $table->timestamps();
+        // });
     }
 
     /**

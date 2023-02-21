@@ -67,6 +67,7 @@ Route::group(['middleware'=>'auth'],function (){
 
     Route::resource('carts', CartController::class );
     Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+    Route::get('/pos/reset', [PosController::class, 'reset'])->name('pos.reset');
 
 
     Route::get('transactionspage', [TransactionController::class, 'index'])->name('transactions.index');

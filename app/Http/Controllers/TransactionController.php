@@ -13,7 +13,7 @@ class TransactionController extends Controller
 {
     protected $transactions;
 
-    private $transactiondetail;
+    protected $transactiondetail;
     public function __construct(Transaction $transaction, TransactionDetail $transactionDetail)
     {
         $this->transactions = $transaction;

@@ -55,12 +55,16 @@
                 </div>
                 <div class="row">
                     <div class="col">
+                        <a href= "{{ route('pos.reset') }}"
                         <button
                             type="button"
-                            class="btn btn-danger btn-block"
+                            class="btn btn-danger btn-block "
+                            
+                            
                         >
                             Cancel
                         </button>
+</a>
                     </div>
                     <div class="col">
                         <button
@@ -246,7 +250,6 @@
 
             $(document).on('click', '.delete', function() {
                 const cartId = $(this).val();
-                
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -314,6 +317,12 @@
                 })
 
             })
+
+
+
+
+
+            
          })
     </script>
 @endpush

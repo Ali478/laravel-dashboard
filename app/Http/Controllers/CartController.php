@@ -13,6 +13,11 @@ use function PHPUnit\Framework\isNull;
 
 class CartController extends Controller
 {
+    protected $cart;
+    public function __construct(Cart $cart)
+    {
+        $this->cart = $cart;
+    }
    
     public function index()
     {
@@ -42,9 +47,9 @@ class CartController extends Controller
             ]);
         }
 
-        $isExist = Cart::where('product_id', $product->id)->first();
+        $isExist = $this->cart->isExits($product);
 
-        $carts = Cart::where('user_id', auth()->id())->get();
+        $carts =  $this->cart->carts();
         
 		$itemQuantity = 0;
 		if ($carts) {
@@ -138,6 +143,8 @@ class CartController extends Controller
             'message' => 'success'
         ]);
     }
+
+   
 
     public function scan(Request $request){
         $product = Product::where('code', $request->productCode)->first();

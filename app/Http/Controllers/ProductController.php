@@ -124,7 +124,6 @@ class ProductController extends Controller
             if ($result){
                 return redirect('/product');
             }
-            dd($result);
             return redirect()->back()->with(['status'=>false,'message'=>'Add Failed']);
         }catch (\Exception $ex){
             Log::info('ProductController', ['addProduct'=>$ex->getMessage(),'line'=>$ex->getLine()]);
